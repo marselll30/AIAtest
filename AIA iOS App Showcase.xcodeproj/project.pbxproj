@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D124875B2626CEAF0078AC75 /* ThirdPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D124875A2626CEAF0078AC75 /* ThirdPage.swift */; };
 		D1D5D87126241D9A003E2732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5D87026241D9A003E2732 /* AppDelegate.swift */; };
 		D1D5D87326241D9A003E2732 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5D87226241D9A003E2732 /* SceneDelegate.swift */; };
 		D1D5D87526241D9A003E2732 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D5D87426241D9A003E2732 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D124875A2626CEAF0078AC75 /* ThirdPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPage.swift; sourceTree = "<group>"; };
 		D1D5D86D26241D9A003E2732 /* AIA iOS App Showcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AIA iOS App Showcase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1D5D87026241D9A003E2732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1D5D87226241D9A003E2732 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				D1D5D87426241D9A003E2732 /* ViewController.swift */,
 				D1ED0E452625EB8000BE54EF /* SecondPage.swift */,
+				D124875A2626CEAF0078AC75 /* ThirdPage.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			files = (
 				D1D5D89026241E0F003E2732 /* APIData.swift in Sources */,
 				D1D5D88926241DEA003E2732 /* APIModel.swift in Sources */,
+				D124875B2626CEAF0078AC75 /* ThirdPage.swift in Sources */,
 				D1D5D87526241D9A003E2732 /* ViewController.swift in Sources */,
 				D1ED0E462625EB8000BE54EF /* SecondPage.swift in Sources */,
 				D1D5D88D26241DFD003E2732 /* APIIntraday.swift in Sources */,
