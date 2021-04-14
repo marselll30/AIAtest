@@ -285,9 +285,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ABr-5a-Fzt">
-                                <rect key="frame" x="0.0" y="700" width="414" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABr-5a-Fzt">
+                                <rect key="frame" x="0.0" y="646" width="414" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Jvu-Rk-tsk" id="I2T-Gr-JzB"/>
                                     <outlet property="delegate" destination="Jvu-Rk-tsk" id="1GZ-UU-fTL"/>
@@ -405,6 +404,7 @@
                             <constraint firstItem="KbD-IP-Rom" firstAttribute="trailing" secondItem="Cff-77-h8t" secondAttribute="trailing" constant="20" id="8Ag-lc-d7e"/>
                             <constraint firstItem="0nH-OB-T4Y" firstAttribute="leading" secondItem="KbD-IP-Rom" secondAttribute="leading" constant="20" id="8mH-8r-wLr"/>
                             <constraint firstItem="KbD-IP-Rom" firstAttribute="trailing" secondItem="LAf-vu-SvR" secondAttribute="trailing" constant="20" id="A4f-jM-atP"/>
+                            <constraint firstItem="ABr-5a-Fzt" firstAttribute="bottom" secondItem="KbD-IP-Rom" secondAttribute="bottom" id="BJA-RJ-5UZ"/>
                             <constraint firstItem="fXw-7E-pNP" firstAttribute="top" secondItem="Cvx-CU-Ga0" secondAttribute="bottom" constant="20" id="BcQ-tn-WUa"/>
                             <constraint firstItem="haZ-Ex-Chq" firstAttribute="top" secondItem="nuR-QH-xbU" secondAttribute="bottom" constant="20" id="CBG-S0-dNV"/>
                             <constraint firstItem="KHs-1t-dkv" firstAttribute="width" secondItem="gIp-YG-wWN" secondAttribute="width" id="CgD-0n-olX"/>
@@ -425,6 +425,7 @@
                             <constraint firstItem="Cvx-CU-Ga0" firstAttribute="width" secondItem="nuR-QH-xbU" secondAttribute="width" id="UFB-LC-TLg"/>
                             <constraint firstItem="pfB-xG-MUl" firstAttribute="width" secondItem="gIp-YG-wWN" secondAttribute="width" id="VlZ-ZB-LXx"/>
                             <constraint firstItem="LAf-vu-SvR" firstAttribute="top" secondItem="nuR-QH-xbU" secondAttribute="top" id="WHO-H8-Kxh"/>
+                            <constraint firstItem="ABr-5a-Fzt" firstAttribute="leading" secondItem="KbD-IP-Rom" secondAttribute="leading" id="a97-9v-CpT"/>
                             <constraint firstItem="LAf-vu-SvR" firstAttribute="leading" secondItem="nuR-QH-xbU" secondAttribute="trailing" constant="20" id="aYY-bd-550"/>
                             <constraint firstItem="0nH-OB-T4Y" firstAttribute="top" secondItem="KbD-IP-Rom" secondAttribute="top" constant="20" id="avy-Z4-J1S"/>
                             <constraint firstItem="Cff-77-h8t" firstAttribute="centerX" secondItem="b1Y-SN-pds" secondAttribute="centerX" id="b89-1L-7zJ"/>
@@ -438,6 +439,7 @@
                             <constraint firstItem="85l-TS-dzC" firstAttribute="top" secondItem="iFr-Zg-lr9" secondAttribute="top" id="ryC-bn-U4q"/>
                             <constraint firstItem="Cff-77-h8t" firstAttribute="top" secondItem="0nH-OB-T4Y" secondAttribute="bottom" constant="20" id="tRM-eb-LZa"/>
                             <constraint firstItem="KHs-1t-dkv" firstAttribute="height" secondItem="gIp-YG-wWN" secondAttribute="height" id="uEi-Xi-Sbd"/>
+                            <constraint firstItem="ABr-5a-Fzt" firstAttribute="trailing" secondItem="KbD-IP-Rom" secondAttribute="trailing" id="uGr-7X-uQ3"/>
                             <constraint firstItem="haZ-Ex-Chq" firstAttribute="leading" secondItem="nuR-QH-xbU" secondAttribute="leading" id="w4Q-ao-aNJ"/>
                             <constraint firstItem="pfB-xG-MUl" firstAttribute="top" secondItem="Cvx-CU-Ga0" secondAttribute="top" id="yPW-jn-SJM"/>
                         </constraints>
