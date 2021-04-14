@@ -10,16 +10,21 @@ import UIKit
 class ThirdPage: UIViewController {
     
     @IBOutlet weak var symbolSearch: UITextField!
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var intervalPick: UITextField!
-    @IBOutlet weak var outputSize: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var stockSymbol: UILabel!
+    @IBOutlet weak var timeUpdated: UILabel!
+    @IBOutlet weak var openLabel: UILabel!
+    @IBOutlet weak var highLabel: UILabel!
+    @IBOutlet weak var lowLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         apiManager.delegate = self
         pickerView.isHidden = true
+        symbolSearch.delegate = self
+        intervalPick.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -27,49 +32,43 @@ class ThirdPage: UIViewController {
     var intervalList = ["1min", "5min", "15min", "30min", "60min"]
     var apiManager = APIIntraday()
     
-    func createPickerView() {
-           let pickerView = UIPickerView()
-           pickerView.delegate = self
-           intervalPick.inputView = pickerView
-    }
-//    func dismissPickerView() {
-//       let toolBar = UIToolbar()
-//       toolBar.sizeToFit()
-//        let button = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.action))
-//       toolBar.setItems([button], animated: true)
-//       toolBar.isUserInteractionEnabled = true
-//       intervalPick.inputAccessoryView = toolBar
-//    }
-//    @objc func action() {
-//          view.endEditing(true)
-//    }
-    
 }
 
 extension ThirdPage: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if intervalPick.isEditing {
             pickerView.isHidden = false
-        } else {
+        } else if intervalPick.isEditing == false {
             pickerView.isHidden = true
         }
         
     }
     
-}
-
-
-extension ThirdPage: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+    @IBAction func searchTapped(_ sender: Any) {
+        symbolSearch.endEditing(true)
+        print(symbolSearch.text!)
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        symbolSearch.endEditing(true)
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if textField.text != "" {
+            return true
+        } else {
+            textField.placeholder = "Type something"
+            return false
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
         
-        return cell
+        if let symbol = symbolSearch.text {
+            apiManager.fetchSymbol(symbolName: symbol, interval: "\(intervalPick.text ?? intervalList[1])", outputsize: "")
+        }
     }
-    
     
 }
 
@@ -77,6 +76,7 @@ extension ThirdPage: UITableViewDelegate, UITableViewDataSource {
 extension ThirdPage: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return intervalList.count
+        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -85,6 +85,7 @@ extension ThirdPage: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return intervalList[row]
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -97,7 +98,11 @@ extension ThirdPage: UIPickerViewDelegate, UIPickerViewDataSource {
 extension ThirdPage: IntradayDelegate {
     func didUpdateAPI(_ apiManger: APIIntraday, api: APIModel) {
         DispatchQueue.main.async {
-            
+            self.stockSymbol.text = api.symbol
+            self.openLabel.text = "\(api.open)"
+            self.highLabel.text = "\(api.high)"
+            self.lowLabel.text = "\(api.low)"
+            self.timeUpdated.text = "\(api.time)"
         }
     }
     
