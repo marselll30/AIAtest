@@ -52,7 +52,7 @@ extension ViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         
         if let symbol = symbolSearch.text {
-            apiManager.fetchSymbol(symbolName: symbol)
+            apiManager.fetchSymbol(symbolName: symbol, interval: "5min", outputsize: "full")
         }
     }
 }

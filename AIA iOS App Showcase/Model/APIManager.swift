@@ -17,8 +17,8 @@ struct APIIntraday {
     
     var delegate: IntradayDelegate?
     
-    func fetchSymbol(symbolName: String) {
-        let urlString = "\(intradayUrl)&symbol=\(symbolName)&interval=5min"
+    func fetchSymbol(symbolName: String, interval: String, outputsize: String) {
+        let urlString = "\(intradayUrl)&symbol=\(symbolName)&interval=\(interval)&outputsize=\(outputsize)"
         performRequest(with: urlString)
     }
     
